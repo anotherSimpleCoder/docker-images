@@ -11,6 +11,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Build CMake Docker image
-        working-directory: ./cmake
-        run: docker build -t anothersimplecoder/cmake .
+        uses: docker/build-push-action@v3
+        with:
+          context: ./cmake
+          file: ./cmake/Dockerfile
+          push: false
+          tags: ghcr.io/anothersimplecoder/cmake:latest
