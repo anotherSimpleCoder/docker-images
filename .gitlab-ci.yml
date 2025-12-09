@@ -1,15 +1,9 @@
-image: docker:24.0.5-cli
-services:
-  - docker:24.0.5-dind
-before_script:
-  - docker info
+default:
+  before_script:
+    - docker info
 
-stages:
-  - build
-
-build:
-  stage: build
-  tags: 
+build_image:
+  tags:
     - amd64
   script:
     |
