@@ -18,8 +18,6 @@ jobs:
       id-token: write
 
     steps:
-      - name: Login to 
-
       - name: Checkout code
         uses: actions/checkout@v4
 
