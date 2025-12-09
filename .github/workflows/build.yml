@@ -19,5 +19,5 @@ jobs:
         with:
           context: ./cmake
           file: ./cmake/Dockerfile
-          push: false
+          push: true
           tags: ghcr.io/anothersimplecoder/cmake:latest
